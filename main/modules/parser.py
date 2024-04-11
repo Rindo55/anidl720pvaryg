@@ -17,7 +17,7 @@ def trim_title(title: str):
     title = title.replace("Shangri-La Frontier - Kusogee Hunter, Kamige ni Idoman to Su", "Shangri-La Frontier")
     title = title.replace("Hataraku Maou-sama!! Part 2", "The Devil is a Part-Timer! S2 Part 2")
     title = title.replace("Tian Guan Ci Fu Di Er Ji", "Heaven Official's Blessing S2")
-    title = title.replace("Me-gumi no Daigo - Kyuukoku no Orange", "Megumi no Daigo - Kyuukoku no Orange")
+    title = title.replace("(AAC 2.0) ", "")
     ext = ".mkv"
     title = title + ext
     return title
