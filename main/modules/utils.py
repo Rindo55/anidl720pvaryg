@@ -191,7 +191,7 @@ Speed: {}
 ETA: {}
     """
 
-    text2 = """<blockquote>{}</blockquote>
+    text2 = """<blockquote><b>{}</b></blockquote>
 
 <blockquote>
 <b>STATUS</b>: <code>Encoding UwU!</code> ⚡️
