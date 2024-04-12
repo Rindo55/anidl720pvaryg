@@ -143,31 +143,6 @@ async def start_uploading(data):
         subtitle = subtitle.replace("][", ", ")
         subtitle = subtitle.replace("[", "")
         subtitle = subtitle.replace("]", "")     
-        subtitle = subtitle.replace("ENG", "English")
-        subtitle = subtitle.replace("POR-BR", "Portuguese (Brazil)")
-        subtitle = subtitle.replace("SPA-LA", "Spanish (Latin America)")
-        subtitle = subtitle.replace("SPA", "Spanish")
-        subtitle = subtitle.replace("ARA", "Arabic")
-        subtitle = subtitle.replace("FRE", "French")
-        subtitle = subtitle.replace("GER", "German")
-        subtitle = subtitle.replace("ITA", "Italian")
-        subtitle = subtitle.replace("RUS", "Russian")
-        subtitle = subtitle.replace("HIN", "Hindi")
-        subtitle = subtitle.replace("RUM", "Romanian")
-        subtitle = subtitle.replace("FIN", "Finnish")
-        subtitle = subtitle.replace("MAY", "Malaysian")
-        subtitle = subtitle.replace("SWE", "Swedish")
-        subtitle = subtitle.replace("GRE", "Greek")
-        subtitle = subtitle.replace("HEB", "Hebrew")
-    
-        subtitle = subtitle.replace("JPN", "Japanese")
-        subtitle = subtitle.replace("POL", "Polish")
-        subtitle = subtitle.replace("DUT", "Dutch")
-        subtitle = subtitle.replace("FIL", "Filipino")
-        subtitle = subtitle.replace("CES", "Czech")
-        subtitle = subtitle.replace("HRV", "Croatian")
-        subtitle = subtitle.replace("HUN", "Hungarian")
-        subtitle = subtitle.replace("UKR", "Ukranian")
     
         os.rename(file,"video.mkv")
         titlx = title.replace('[1080p][Multiple Subtitle]', '[Web][720p x265 10Bit][Opus][Erai-raws]')
@@ -188,7 +163,7 @@ async def start_uploading(data):
             os.rename("out.mkv",fpath)
   
         print("Uploading --> ",name)
-        video = await upload_video(msg,fpath,id,tit,name,size,main,subtitle,nyaasize)
+        video = await upload_video(msg,img,fpath,id,tit,name,size,main,subtitle,nyaasize)
 
 
         try:
