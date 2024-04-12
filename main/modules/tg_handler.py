@@ -5,7 +5,7 @@ import aiohttp
 import requests
 import aiofiles
 import sys
-
+from moviepy.editor import VideoFileClip
 from main.modules.compressor import compress_video
 
 from main.modules.utils import episode_linker, get_duration, get_epnum, status_text, get_filesize, b64_to_str, str_to_b64, send_media_and_reply, get_durationx
@@ -87,7 +87,17 @@ async def tg_handler():
 
             pass
 
-            
+ def get_audio_info(video_path):
+    try:
+        video_clip = VideoFileClip(video_path)
+        audio = video_clip.audio
+        audio_info = {
+            'audio_track_language': audio.langcode
+        }
+        return audio_info
+    except Exception as e:
+        print(f"Error: {e}")
+        return None           
 
 async def start_uploading(data):
 
@@ -149,6 +159,13 @@ async def start_uploading(data):
         titm = f"**[AniDL] {titlx}**"
         tito = f"[AniDL] {titlx}"
         main = await app.send_photo(KAYO_ID,photo=img, caption=titm)
+        video_path="video.mkv"
+        
+        audio_info = await get_audio_info(video_path):      
+        if audio_info:
+            print("Audio Track Language: ", audio_info['audio_track_language'])
+        else:
+            print("Failed to get audio information.")
         compressed = await compress_video(duration,main,tito)
     
 
@@ -163,7 +180,7 @@ async def start_uploading(data):
             os.rename("out.mkv",fpath)
   
         print("Uploading --> ",name)
-        video = await upload_video(msg,img,fpath,id,tit,name,size,main,subtitle,nyaasize)
+        video = await upload_video(msg,img,fpath,id,tit,name,size,main,subtitle,nyaasize,audio_info)
 
 
         try:
