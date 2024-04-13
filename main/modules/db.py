@@ -59,13 +59,13 @@ def is_fid_in_db(fid):
     else:
         return None
 
-def save_file_in_db(filed, hash, subtitle, img, audio_info, tit, upid=None):
+def save_file_in_db(filed, hash, subtitle, img, audio_info, tit, alink, upid=None):
     filesdb.update_one(
         {
             "hash": hash,
             "fid": str(upid),
         },
-        {"$set": {"filename": filed, "filenamex": filed, "code": hash, "msg_id": upid, "subtitle": subtitle, "image": img, "audio": audio_info, "etitle": tit}},
+        {"$set": {"filename": filed, "filenamex": filed, "code": hash, "msg_id": upid, "subtitle": subtitle, "image": img, "audio": audio_info, "etitle": tit, "alink": alink}},
         upsert=True,
     )
     return
