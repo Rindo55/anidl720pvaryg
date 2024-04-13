@@ -87,7 +87,7 @@ async def tg_handler():
 
             pass
 
- def get_audio_info(video_path):
+def get_audio_info(video_path):
     try:
         video_clip = VideoFileClip(video_path)
         audio = video_clip.audio
@@ -98,7 +98,6 @@ async def tg_handler():
     except Exception as e:
         print(f"Error: {e}")
         return None           
-
 async def start_uploading(data):
 
     try:
