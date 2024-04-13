@@ -13,6 +13,7 @@ motor
 dnspython
 opencv-python-headless
 aiofiles
+moviepy
 html5lib
 libtorrent==2.0.9
 pyromod==1.5
