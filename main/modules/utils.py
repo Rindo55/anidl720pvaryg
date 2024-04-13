@@ -195,7 +195,7 @@ ETA: {}
 
 <blockquote>
 <b>STATUS</b>: <code>Encoding UwU!</code> ⚡️
-<b>○ Engine</b>: <code>Vultr</code>
+<b>○ Engine</b>: <code>Azure</code>
 <b>○ Precentage</b>: <code>{}%</code>
 <b>○ Speed</b>: <code>{}</code>
 <b>○ ETA</b>: <code>{}</code>
