@@ -93,7 +93,7 @@ def get_audio_language(video_path):
         for track in media_info.tracks:
             if track.track_type == 'Audio':
                 language = track.language
-                langauage = language.replace("ja", "JP")
+                language = language.replace("ja", "JP")
                 return language
         return None
     except Exception as e:
