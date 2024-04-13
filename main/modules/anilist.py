@@ -168,7 +168,7 @@ async def get_anilist_data(name):
     # title
     title1 = title.get("english")
     title2 = title.get("romaji")
-
+    alink = f"https://anilist.co/anime/{id_}"
     if title2 == None:
       title2 = title.get("native")
 
@@ -277,7 +277,7 @@ async def get_anilist_data(name):
       malink = mal['url']
       malrank = mal['rank']
       malpopularity = mal['popularity']
-      
+
       caption = atext.format(
       title1,
       title2,
@@ -308,5 +308,4 @@ async def get_anilist_data(name):
       caption += f"\n**▸ Links: [Trailer](https://www.youtube.com/watch?v={ytid}) | [AniList](https://anilist.co/anime/{id_}) | [MAL]({malink})\n ━━━━━━━━━━━━━━━━━━━━━━\n@Latest_ongoing_airing_anime**"
     else:
       caption += f"\n**▸ Links: [AniList](https://anilist.co/anime/{id_}) | [MAL]({malink})\n━━━━━━━━━━━━━━━━━━━━━━\n@Latest_ongoing_airing_anime**"
-
-    return img, caption
+    return img, caption, alink
