@@ -7,7 +7,6 @@ import aiofiles
 import sys
 from main.modules.compressor import compress_video
 from pymediainfo import MediaInfo
-
 from main.modules.utils import episode_linker, get_duration, get_epnum, status_text, get_filesize, b64_to_str, str_to_b64, send_media_and_reply, get_durationx
 
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
@@ -87,6 +86,7 @@ async def tg_handler():
 
             pass
 
+
 def get_audio_language(video_path):
     try:
         media_info = MediaInfo.parse(video_path)
@@ -98,7 +98,9 @@ def get_audio_language(video_path):
         return None
     except Exception as e:
         print(f"Error: {e}")
-        return None         
+        return None
+        
+
 async def start_uploading(data):
 
     try:
@@ -126,7 +128,7 @@ async def start_uploading(data):
         msg = await app.send_photo(bin_id,photo=img,caption=title)
 
         print("Downloading --> ",name)
-        img, caption = await get_anilist_data(title)
+        img, caption, alink = await get_anilist_data(title)
         await asyncio.sleep(5)
         await status.edit(await status_text(f"Downloading {name}"),reply_markup=button1)
         file = await downloader(msg,link,size,title)
@@ -180,7 +182,8 @@ async def start_uploading(data):
             os.rename("out.mkv",fpath)
   
         print("Uploading --> ",name)
-        video = await upload_video(msg,img,fpath,id,tit,name,size,main,subtitle,nyaasize,audio_language)
+        video = await upload_video(msg,img,fpath,id,tit,name,size,main,subtitle,nyaasize,audio_language, alink)
+
 
 
         try:
