@@ -14,8 +14,8 @@ def trim_title(title: str):
     title = title.replace("Dr. Stone - New World Cour 2", "Dr Stone New World Part 2")
     title = title.replace("Mahou Tsukai no Yome Season 2 Cour 2", "Mahou Tsukai no Yome Season 2 Part 2")
     title = title.replace("Dead Mount Death Play 2nd Cour", "Dead Mount Death Play Part 2")
-    title = title.replace("Shangri-La Frontier - Kusogee Hunter, Kamige ni Idoman to Su", "Shangri-La Frontier")
-    title = title.replace("Hataraku Maou-sama!! Part 2", "The Devil is a Part-Timer! S2 Part 2")
+    title = title.replace(" (CA)", "")
+    title = title.replace(" (JA)", "")
     title = title.replace("Tian Guan Ci Fu Di Er Ji", "Heaven Official's Blessing S2")
     title = title.replace("(AAC 2.0) ", "")
     ext = ".mkv"
@@ -74,7 +74,6 @@ async def auto_parser():
 
         try:
             await update_schedulex()
-            await status.edit(await status_text("Idle..."),reply_markup=button1)
         except:
             pass
 
