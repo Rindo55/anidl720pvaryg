@@ -59,7 +59,7 @@ def is_fid_in_db(fid):
     else:
         return None
 
-def save_file_in_db(filed, hash, upid=None, subtitle, img, audio_info, tit):
+def save_file_in_db(filed, hash, subtitle, img, audio_info, tit, upid=None):
     filesdb.update_one(
         {
             "hash": hash,
