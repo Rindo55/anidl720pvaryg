@@ -73,6 +73,7 @@ async def auto_parser():
                 print("Saved ", i["name"])   
 
         try:
+            await update_schedulex()
             await status.edit(await status_text("Idle..."),reply_markup=button1)
         except:
             pass
