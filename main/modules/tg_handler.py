@@ -101,8 +101,8 @@ def get_audio_language(video_path):
         return None
         
 
-def esl(video_file):
-    media_info = MediaInfo.parse(video_file)
+def esl(video_path):
+    media_info = MediaInfo.parse(video_path)
     
     subtitle_languages = []
     for track in media_info.tracks:
@@ -195,9 +195,9 @@ async def start_uploading(data):
         duration = get_duration(file)
         durationx = get_durationx(file)
         filed = os.path.basename(file)
-        filed = filed.replace("Go.Go.Loser.Ranger.S01E01.We.Are.Justice.The.Dragon.Keepers.1080p.DSNP.WEB-DL.AAC2.0.H.264-VARYG", "[AniDL] Sentai Daishikkaku - 01 [Web][720p x265 10Bit][Opus][DSNP ~ Varyg]")
-        filed = filed.replace("Go.Go.Loser.Ranger.S01E02.Go.Fighter.D.1080p.DSNP.WEB-DL.AAC2.0.H.264-VARYG", "[AniDL] Sentai Daishikkaku - 02 [Web][720p x265 10Bit][Opus][DSNP ~ Varyg]")
-        filed = filed.replace("Go.Go.Loser.Ranger.S01E03.Our.Evil.Will.Bloom.Someday.1080p.DSNP.WEB-DL.AAC2.0.H.264-VARYG", "[AniDL] Sentai Daishikkaku - 03 [Web][720p x265 10Bit][Opus][DSNP ~ Varyg]")
+        filed = filed.replace("Go.Go.Loser.Ranger.S01E01.We.Are.Justice.The.Dragon.Keepers.1080p.DSNP.WEB-DL.AAC2.0.H.264-VARYG", "[AniDL] Sentai Daishikkaku - 01 [Web][720p x265 10Bit][Opus][DSNP ~ VARYG]")
+        filed = filed.replace("Go.Go.Loser.Ranger.S01E02.Go.Fighter.D.1080p.DSNP.WEB-DL.AAC2.0.H.264-VARYG", "[AniDL] Sentai Daishikkaku - 02 [Web][720p x265 10Bit][Opus][DSNP ~ VARYG]")
+        filed = filed.replace("Go.Go.Loser.Ranger.S01E03.Our.Evil.Will.Bloom.Someday.1080p.DSNP.WEB-DL.AAC2.0.H.264-VARYG", "[AniDL] Sentai Daishikkaku - 03 [Web][720p x265 10Bit][Opus][DSNP ~ VARYG]")
         filed = filed.replace("2nd Season", "S2")
         filed = filed.replace("3rd Season", "S3")
         razo = filed.replace("[1080p Web-DL]", "[720p x265] @animxt")
