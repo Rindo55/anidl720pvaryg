@@ -158,8 +158,6 @@ mapping = {
 
 
 
-
-print(" ".join(subtitle_languages))
 async def start_uploading(data):
 
     try:
@@ -223,11 +221,13 @@ async def start_uploading(data):
         else:
             print("Failed to get audio language.")
         subtitle_languages = esl(video_path)
+        
         if subtitle_languages:
             print("Subtitle Track Language:", subtitle_languages)
         else:
             print("Failed to get subtitle language.")
-        exsub = subtitle_laguages.replace("][", ", ")
+        joinsub = " ".join(subtitle_languages)
+        exsub = joinsub.replace("][", ", ")
         exsub = exsub.replace("[", "")
         exsub = exsub.replace("]", "")  
         subtitle = exsub
