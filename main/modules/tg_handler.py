@@ -226,7 +226,7 @@ async def start_uploading(data):
             print("Subtitle Track Language:", subtitle_languages)
         else:
             print("Failed to get subtitle language.")
-        joinsub = " ".join(subtitle_languages)
+        joinsub = ", ".join(subtitle_languages)
         exsub = joinsub.replace("][", ", ")
         exsub = exsub.replace("[", "")
         exsub = exsub.replace("]", "")  
