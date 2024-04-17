@@ -21,9 +21,7 @@ def trim_title(title: str):
     title = title + ext
     return title
 
-def multi_sub(title: str):
-    subtitle = title.split()[-1] 
-    return subtitle
+
 
 def parse():
     a = feedparser.parse("https://nyaa.si/?page=rss&u=varyg1001&q=sentai")
@@ -33,7 +31,6 @@ def parse():
     for i in b:
         item = {}
         item['title'] = trim_title(i['title'])
-        item['subtitle'] = multi_sub(i['title'])
         item['size'] = i['nyaa_size']   
         item['link'] = "magnet:?xt=urn:btih:" + i['nyaa_infohash']
         data.append(item)
