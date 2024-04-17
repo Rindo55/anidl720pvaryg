@@ -100,7 +100,7 @@ async def upload_video(msg: Message, img, file, id, tit, name, ttl, main, msubti
             )
             await asyncio.sleep(3)
             anidl_id=-1001234112068
-            anidlcap = f"<b>{anidltitle}</b>\n<i>({tit})</i>\n\n<blockquote><b>• Source:</b> <code>Erai-raws</code>\n<b>• Video:</b> <code>720p x265 10Bit CRF@22</code>\n<b>• Audio:</b> <code>Japanese (OPUS)</code>\n<b>• Subtitle:</b> <code>{subtitle}</code></blockquote>"
+            anidlcap = f"<b>{anidltitle}</b>\n<i>({tit})</i>\n\n<blockquote><b>• Source:</b> <code>VARYG (DSNP)</code>\n<b>• Video:</b> <code>720p x265 10Bit CRF@22</code>\n<b>• Audio:</b> <code>Japanese (OPUS)</code>\n<b>• Subtitle:</b> <code>{msubtitle}</code></blockquote>"
             anidl_markup = InlineKeyboardMarkup(
                 [
                     [
