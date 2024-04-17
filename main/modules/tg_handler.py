@@ -107,7 +107,7 @@ def esl(video_path):
     subtitle_languages = []
     for track in media_info.tracks:
         if track.track_type == 'Text':
-            subtitle_languages.append(f"[track.language]")
+            subtitle_languages.append(track.language)
     
     return subtitle_languages
 
