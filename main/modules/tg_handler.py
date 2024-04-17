@@ -227,10 +227,13 @@ async def start_uploading(data):
             print("Subtitle Track Language:", subtitle_languages)
         else:
             print("Failed to get subtitle language.")
-        subtitle = subtitle_languages
+        exsub = subtitle_laguages.replace("][", ", ")
+        exsub = exsub.replace("[", "")
+        exsub = exsub.replace("]", "")  
+        subtitle = exsub
         msubtitle = replace_text_with_mapping(subtitle, mapping)
         print(msubtitle)
-        compressed = await compress_video(duration,main,tito)
+        compressed = await compress_video(duration,main,filed)
     
 
         if compressed == "None" or compressed == None:
