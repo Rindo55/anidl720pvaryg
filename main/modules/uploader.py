@@ -44,7 +44,7 @@ from main.inline import button1
 
 
 
-async def upload_video(msg: Message, img, file, id, tit, name, ttl, main, subtitle, nyaasize, audio_info, alink):
+async def upload_video(msg: Message, img, file, id, tit, name, ttl, main, msubtitle, nyaasize, audio_info, alink):
     try:
         fuk = isfile(file)
         if fuk:
@@ -59,7 +59,7 @@ async def upload_video(msg: Message, img, file, id, tit, name, ttl, main, subtit
             filed = os.path.basename(file)
             print('filed: ', filed)
             anidltitle = filed.replace("[AniDL] ", "")
-            anidltitle = anidltitle.replace("[1080p Web-DL].mkv", "")
+            anidltitle = anidltitle.replace(" [Web][720p x265 10Bit][Opus][DSNP ~ Varyg]", "")
             
             filed = filed.replace("[1080p Web-DL]", "[Web][720p x265 10Bit][Opus][Erai-raws]")
             fukpath = "downloads/" + filed
@@ -77,9 +77,9 @@ async def upload_video(msg: Message, img, file, id, tit, name, ttl, main, subtit
             )
             await asyncio.sleep(3)
             hash = "".join([random.choice(ascii_letters + digits) for n in range(50)])
-            save_file_in_db(filed, hash, subtitle, img, audio_info, tit, alink, upid)
+            save_file_in_db(filed, hash, msubtitle, img, audio_info, tit, alink, size, upid)
             print(hash)
-            gcaption = f"`📺 {filed}`\n\n`🔗 EP - {ep_num}:  https://anidl.ddlserverv1.me.in/beta/{hash}`" + "\n\n" + f"🔠 __{tit}__" + "\n" + "\n" + f"📝 `{subtitle}`"
+            gcaption = f"`📺 {filed}`\n\n`🔗 EP - {ep_num}:  https://anidl.ddlserverv1.me.in/beta/{hash}`" + "\n\n" + f"🔠 __{tit}__" + "\n" + "\n" + f"📝 `{msubtitle}`"
             dl_markup = InlineKeyboardMarkup(
                 [
                     [
