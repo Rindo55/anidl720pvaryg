@@ -11,7 +11,7 @@ from main.inline import button1
 def trim_title(title: str):
     title = title.replace("Go Go Loser Ranger S01E01 We Are Justice The Dragon Keepers 1080p DSNP WEB-DL AAC2.0 H 264-VARYG (Sentai Daishikkaku, Multi-Subs)", "Sentai Daishikkaku - 01")
     title = title.replace("Go Go Loser Ranger S01E02 Go Fighter D 1080p DSNP WEB-DL AAC2.0 H 264-VARYG (Sentai Daishikkaku, Multi-Subs)", "Sentai Daishikkaku - 02")
-    title = title.replace(" Go Go Loser Ranger S01E04 The Soldier With Love Hibiki 1080p DSNP WEB-DL AAC2.0 H 264-VARYG (Sentai Daishikkaku, Multi-Subs).mkv", "Sentai Daishikkaku - 04")
+    title = title.replace("Go Go Loser Ranger S01E04 The Soldier With Love Hibiki 1080p DSNP WEB-DL AAC2.0 H 264-VARYG (Sentai Daishikkaku, Multi-Subs)", "Sentai Daishikkaku - 04")
     title = title.replace("Dead Mount Death Play 2nd Cour", "Dead Mount Death Play Part 2")
     title = title.replace(" (CA)", "")
     title = title.replace(" (JA)", "")
