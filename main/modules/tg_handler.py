@@ -197,7 +197,7 @@ async def start_uploading(data):
         filed = os.path.basename(file)
         filed = filed.replace("Go.Go.Loser.Ranger.S01E01.We.Are.Justice.The.Dragon.Keepers.1080p.DSNP.WEB-DL.AAC2.0.H.264-VARYG", "[AniDL] Sentai Daishikkaku - 01 [Web][720p x265 10Bit][Opus][DSNP ~ VARYG]")
         filed = filed.replace("Go.Go.Loser.Ranger.S01E02.Go.Fighter.D.1080p.DSNP.WEB-DL.AAC2.0.H.264-VARYG", "[AniDL] Sentai Daishikkaku - 02 [Web][720p x265 10Bit][Opus][DSNP ~ VARYG]")
-        filed =filed.replace("Go.Go.Loser.Ranger.S01E04.The.Soldier.With.Love.Hibiki.1080p.DSNP.WEB-DL.AAC2.0.H.264-VARYG.mkv", "[AniDL] Sentai Daishikkaku - 04 [Web][720p x265 10Bit][Opus][DSNP ~ VARYG]")
+        filed =filed.replace("Go.Go.Loser.Ranger.S01E04.The.Soldier.With.Love.Hibiki.1080p.DSNP.WEB-DL.AAC2.0.H.264-VARYG", "[AniDL] Sentai Daishikkaku - 04 [Web][720p x265 10Bit][Opus][DSNP ~ VARYG]")
         filed = filed.replace("2nd Season", "S2")
         filed = filed.replace("3rd Season", "S3")
         razo = filed.replace("[1080p Web-DL]", "[720p x265] @animxt")
